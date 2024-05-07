@@ -21,10 +21,10 @@ public class Main {
 
   public static void main(String[] args) throws Exception {
     String apiKey = System.getProperty("maps.key");
+    String[] origins = {System.getProperty("o")};
+    String[] destinations = {System.getProperty("d")};
     long _10_MINS = 10 * 60 * 1000;
 
-    String[] origins = {"5.632876447736483,-0.23837434088806433"};
-    String[] destinations = {"5.706293798537665,-0.23266750027118238"};
     Helper h = new Helper(apiKey, origins, destinations);
     long time = System.currentTimeMillis() + _10_MINS;
     var instant = changeToReadableTime(time).atZone(ZoneOffset.UTC);
